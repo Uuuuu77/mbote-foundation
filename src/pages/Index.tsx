@@ -98,7 +98,7 @@ const FounderSection = () => {
           <div className="lg:col-span-5">
             <div className="bg-card border border-border rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop&crop=face"
+                src="/john-mbote.jpeg"
                 alt="John Mbote Njuguna"
                 className="h-72 w-full object-cover"
               />
