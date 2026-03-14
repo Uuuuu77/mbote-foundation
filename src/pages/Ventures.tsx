@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   Brain, Bot, Landmark, Link2, Sun, Microscope,
@@ -29,20 +28,21 @@ const Ventures = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-24 md:py-32 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="py-28 md:py-36 bg-background">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <p className="font-mono text-[10px] tracking-widest text-primary mb-4 animate-fade-in">VENTURES</p>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 animate-slide-up">
             Mbote Ventures
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-xl text-muted-foreground max-w-2xl animate-slide-up" style={{ animationDelay: "0.1s", lineHeight: 1.7 }}>
             We back ambitious founders building transformative technologies that will define the next century.
           </p>
         </div>
       </section>
 
       {/* Grid */}
-      <section ref={gridAnim.ref} className="py-24 bg-background">
-        <div className="container mx-auto px-4">
+      <section ref={gridAnim.ref} className="py-28 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className={`text-center mb-16 ${gridAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">Investment Areas</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -53,13 +53,13 @@ const Ventures = () => {
             {ventures.map((v, i) => (
               <div
                 key={v.title}
-                className={`bg-card rounded-lg p-6 border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${
+                className={`bg-background rounded-xl p-8 border border-border hover:border-primary/25 hover:-translate-y-1 transition-all duration-300 ${
                   gridAnim.isVisible ? "animate-slide-up" : "opacity-0"
                 }`}
                 style={{ animationDelay: `${i * 0.06}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center mb-4">
-                  <v.icon className="text-accent-foreground" size={24} />
+                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-4">
+                  <v.icon className="text-primary" size={24} />
                 </div>
                 <h3 className="font-display font-semibold text-foreground mb-2">{v.title}</h3>
                 <p className="text-sm text-muted-foreground">{v.desc}</p>
@@ -70,17 +70,17 @@ const Ventures = () => {
       </section>
 
       {/* CTA */}
-      <section ref={ctaAnim.ref} className="py-24 bg-primary">
-        <div className={`container mx-auto px-4 text-center ${ctaAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-6">
+      <section ref={ctaAnim.ref} className="py-28 bg-background">
+        <div className={`max-w-7xl mx-auto px-6 md:px-12 text-center ${ctaAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Founders building the future should reach out.
           </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto mb-10">
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
             If you're building transformative technology, we want to hear from you.
           </p>
-          <Button asChild size="lg" variant="secondary" className="text-base px-8">
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
+          <Link to="/contact" className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base hover:opacity-90 transition-opacity inline-block">
+            Get in Touch →
+          </Link>
         </div>
       </section>
     </Layout>
