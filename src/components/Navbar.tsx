@@ -30,7 +30,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(10,10,10,0.85)] backdrop-blur-xl border-b border-border">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 md:px-12">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Mbote Foundation" className="h-9 w-9 object-contain" />
+          <img src={logo} alt="Mbote Foundation" className="h-10 w-10 object-contain rounded-sm" />
           <span className="font-display font-bold text-base text-foreground">Mbote Foundation</span>
         </Link>
 
@@ -69,19 +69,19 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={28} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu — full screen overlay */}
       {open && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-background z-50 flex flex-col px-6 py-8">
+        <div className="lg:hidden fixed inset-0 top-16 bg-[#0A0A0A] backdrop-blur-none z-50 flex flex-col px-6 py-8 border-t border-border">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               to={link.path}
               onClick={() => handleNavClick(link.path)}
-              className="text-xl font-medium text-muted-foreground hover:text-foreground py-3 border-b border-border"
+              className="text-2xl font-medium text-muted-foreground hover:text-foreground py-4 border-b border-border"
             >
               {link.label}
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
-            className="bg-primary text-primary-foreground font-semibold rounded-full text-base px-8 py-3 mt-8 text-center hover:opacity-90 transition-opacity"
+            className="bg-primary text-primary-foreground font-semibold rounded-full text-base px-8 py-3 mt-10 text-center hover:opacity-90 transition-opacity w-full"
           >
             Build With Us →
           </Link>
