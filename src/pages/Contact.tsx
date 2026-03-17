@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -20,8 +21,123 @@ const faqs = [
   { q: "I want to help but I'm not a founder or investor. How can I contribute?", a: "We need mentors, advisors, researchers, engineers, designers, and anyone with skills and conviction. Join our Builders community or reach out directly — there are many ways to contribute to the mission." },
 ];
 
+const ContactForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    tagline: "",
+    description: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Mbote Foundation — ${form.name}${form.company ? " · " + form.company : ""}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || "—"}\nCompany/Startup: ${form.company || "—"}\nTagline: ${form.tagline || "—"}\n\n${form.description}`
+    );
+    window.location.href = `mailto:johnmnjuguna89@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="text-center py-16">
+        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+          <span className="text-primary text-2xl font-bold">✓</span>
+        </div>
+        <p className="text-foreground text-xl font-semibold mb-3">Your email client should have opened.</p>
+        <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
+          If it didn't, email us directly at{" "}
+          <a href="mailto:johnmnjuguna89@gmail.com" className="text-primary hover:opacity-80 transition-opacity">
+            johnmnjuguna89@gmail.com
+          </a>
+          {" "}or{" "}
+          <a href="https://wa.me/254795184144" target="_blank" rel="noopener noreferrer" className="text-primary hover:opacity-80 transition-opacity">
+            WhatsApp us
+          </a>.
+        </p>
+        <button
+          onClick={() => setSubmitted(false)}
+          className="mt-8 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Name + Email */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">YOUR NAME *</label>
+          <input name="name" required value={form.name} onChange={handleChange} placeholder="Jane Doe"
+            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all" />
+        </div>
+        <div>
+          <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">EMAIL ADDRESS *</label>
+          <input name="email" type="email" required value={form.email} onChange={handleChange} placeholder="you@example.com"
+            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all" />
+        </div>
+      </div>
+
+      {/* Phone + Company */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">PHONE / WHATSAPP</label>
+          <input name="phone" value={form.phone} onChange={handleChange} placeholder="+254 7XX XXX XXX"
+            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all" />
+        </div>
+        <div>
+          <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">COMPANY / STARTUP NAME</label>
+          <input name="company" value={form.company} onChange={handleChange} placeholder="Acme Inc."
+            className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all" />
+        </div>
+      </div>
+
+      {/* Tagline */}
+      <div>
+        <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">ONE-LINE TAGLINE</label>
+        <input name="tagline" value={form.tagline} onChange={handleChange} placeholder="We're building X for Y"
+          className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all" />
+      </div>
+
+      {/* Description */}
+      <div>
+        <label className="font-mono text-[10px] tracking-widest text-primary uppercase block mb-2">WHAT ARE YOU BUILDING? *</label>
+        <textarea name="description" required value={form.description} onChange={handleChange} rows={5}
+          placeholder="Tell us about your idea, company, or how you'd like to contribute..."
+          className="w-full bg-card border border-border rounded-xl px-4 py-3 text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all resize-none" />
+      </div>
+
+      {/* Submit */}
+      <div className="pt-2">
+        <button type="submit"
+          className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base hover:opacity-90 transition-opacity w-full">
+          Send Message →
+        </button>
+        <p className="text-muted-foreground text-xs text-center mt-4">
+          This will open your email client. You can also reach us on{" "}
+          <a href="https://wa.me/254795184144" target="_blank" rel="noopener noreferrer" className="text-primary hover:opacity-80 transition-opacity">
+            WhatsApp
+          </a>.
+        </p>
+      </div>
+    </form>
+  );
+};
+
 const Contact = () => {
   const seekingAnim = useScrollAnimation();
+  const formAnim = useScrollAnimation();
   const contactAnim = useScrollAnimation();
   const faqAnim = useScrollAnimation();
 
@@ -78,12 +194,28 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <section ref={formAnim.ref} className="py-28 md:py-36 bg-background">
+        <div className="max-w-2xl mx-auto px-6 md:px-12">
+          <div className={`mb-16 text-center ${formAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
+            <p className="font-mono text-[10px] tracking-widest text-primary mb-4">GET IN TOUCH</p>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mb-4">Tell us about what you're building.</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
+              Whether you're a founder, investor, or builder — we want to hear from you. Fill in what's relevant and we'll be in touch.
+            </p>
+          </div>
+          <div className={`${formAnim.isVisible ? "animate-slide-up" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
       {/* Contact Cards */}
-      <section ref={contactAnim.ref} className="py-28 md:py-36 bg-background">
+      <section ref={contactAnim.ref} className="py-28 md:py-36 bg-card border-y border-border">
         <div className="max-w-2xl mx-auto px-6 md:px-12">
           <div className={`space-y-8 ${contactAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
             {/* WhatsApp */}
-            <div className="bg-card rounded-xl border border-border p-8 hover:border-primary/25 transition-all duration-300">
+            <div className="bg-background rounded-xl border border-border p-8 hover:border-primary/25 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center">
                   <MessageCircle className="text-primary" size={28} />
@@ -104,7 +236,7 @@ const Contact = () => {
             </div>
 
             {/* Email */}
-            <div className="bg-card rounded-xl border border-border p-8 hover:border-primary/25 transition-all duration-300">
+            <div className="bg-background rounded-xl border border-border p-8 hover:border-primary/25 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center">
                   <Mail className="text-primary" size={28} />
@@ -123,7 +255,7 @@ const Contact = () => {
             </div>
 
             {/* Locations */}
-            <div className="bg-card rounded-xl border border-border p-8">
+            <div className="bg-background rounded-xl border border-border p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center">
                   <MapPin className="text-primary" size={28} />
@@ -143,7 +275,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ */}
-      <section ref={faqAnim.ref} className="py-28 md:py-36 bg-card border-y border-border">
+      <section ref={faqAnim.ref} className="py-28 md:py-36 bg-background">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <div className={`mb-16 ${faqAnim.isVisible ? "animate-slide-up" : "opacity-0"}`}>
             <p className="font-mono text-[10px] tracking-widest text-primary mb-4">FAQ</p>
@@ -151,7 +283,7 @@ const Contact = () => {
           </div>
           <Accordion type="single" collapsible className={`space-y-4 ${faqAnim.isVisible ? "animate-slide-up" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="bg-background border border-border rounded-xl px-6 overflow-hidden">
+              <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-6 overflow-hidden">
                 <AccordionTrigger className="text-foreground font-medium text-left py-5 hover:no-underline">
                   {faq.q}
                 </AccordionTrigger>
@@ -165,7 +297,7 @@ const Contact = () => {
       </section>
 
       {/* Closing */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-card border-t border-border">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <p className="text-muted-foreground text-lg">
             Still have questions?{" "}
