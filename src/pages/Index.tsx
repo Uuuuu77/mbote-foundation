@@ -69,8 +69,8 @@ const HeroSection = () => (
         </Link>
       </div>
       <div className="mt-8 inline-flex items-center gap-2 bg-muted border border-border text-muted-foreground text-xs rounded-full px-5 py-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-        Pre-launch — seeking co-founders & investors
+        <span className="w-2 h-2 rounded-full bg-primary" />
+        Pre-launch · Nairobi, Kenya · 2025
       </div>
     </div>
   </section>
