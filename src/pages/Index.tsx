@@ -61,10 +61,10 @@ const HeroSection = () => (
         A pre-launch initiative to build the infrastructure Africa's boldest founders never had — backed by a self-sustaining model where commerce funds mission.
       </p>
       <div className="flex flex-wrap justify-center gap-4 mt-10 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-        <Link to="/contact" className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base hover:opacity-90 transition-opacity">
+        <Link to="/contact" className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base btn-primary-hover hover:opacity-90 transition-opacity">
           Join the Vision →
         </Link>
-        <Link to="/manifesto" className="border border-border text-foreground rounded-full px-8 py-3.5 text-base hover:border-primary hover:text-primary transition-colors">
+        <Link to="/manifesto" className="border border-border text-foreground rounded-full px-8 py-3.5 text-base btn-primary-hover hover:border-primary hover:text-primary transition-colors">
           Read the Manifesto
         </Link>
       </div>
