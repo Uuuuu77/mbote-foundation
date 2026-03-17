@@ -58,10 +58,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
