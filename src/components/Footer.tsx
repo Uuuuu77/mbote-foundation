@@ -63,11 +63,6 @@ const Footer = () => (
       <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Mbote Foundation. All rights reserved.</p>
         <p className="font-display text-sm italic text-muted-foreground">A vision from Nairobi, Kenya 🌍</p>
-        <div className="flex gap-4">
-          <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={16} /></a>
-          <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={16} /></a>
-          <a href="#" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors"><Github size={16} /></a>
-        </div>
       </div>
     </div>
   </footer>

@@ -61,16 +61,16 @@ const HeroSection = () => (
         A pre-launch initiative to build the infrastructure Africa's boldest founders never had — backed by a self-sustaining model where commerce funds mission.
       </p>
       <div className="flex flex-wrap justify-center gap-4 mt-10 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-        <Link to="/contact" className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base hover:opacity-90 transition-opacity">
+        <Link to="/contact" className="bg-primary text-primary-foreground font-semibold rounded-full px-8 py-3.5 text-base btn-primary-hover hover:opacity-90 transition-opacity">
           Join the Vision →
         </Link>
-        <Link to="/manifesto" className="border border-border text-foreground rounded-full px-8 py-3.5 text-base hover:border-primary hover:text-primary transition-colors">
+        <Link to="/manifesto" className="border border-border text-foreground rounded-full px-8 py-3.5 text-base btn-primary-hover hover:border-primary hover:text-primary transition-colors">
           Read the Manifesto
         </Link>
       </div>
       <div className="mt-8 inline-flex items-center gap-2 bg-muted border border-border text-muted-foreground text-xs rounded-full px-5 py-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-        Pre-launch — seeking co-founders & investors
+        <span className="w-2 h-2 rounded-full bg-primary" />
+        Pre-launch · Nairobi, Kenya · 2025
       </div>
     </div>
   </section>

@@ -58,10 +58,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -111,5 +113,29 @@
     color: hsl(43 70% 47%);
     font-family: 'Sora', sans-serif;
     font-weight: 700;
+  }
+
+  .btn-primary-hover {
+    transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .card-hover {
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
   }
 }

@@ -32,7 +32,7 @@ const Manifesto = () => {
         <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16 pt-28 md:pt-36">
           <p className="font-mono text-[10px] tracking-widest text-primary mb-6 animate-fade-in">MANIFESTO</p>
           <p className="font-display font-bold text-foreground text-2xl md:text-4xl italic leading-tight animate-slide-up">
-            "There is a version of this story where I give up."
+            "There is no version of this story where I stop building."
           </p>
         </div>
       </section>
@@ -41,21 +41,21 @@ const Manifesto = () => {
       <article className="bg-background py-20 md:py-28">
         <div className="max-w-[680px] mx-auto px-6">
           <h1 className="font-display font-bold text-foreground text-3xl md:text-[40px] leading-tight">
-            Why I'm building Mbote Foundation
+            Why I'm Building Mbote Foundation
           </h1>
           <p className="text-lg text-muted-foreground mt-3" style={{ lineHeight: 1.7 }}>
-            A founder's letter to anyone who has ever tried to build something in Africa and been told to wait.
+            A letter to anyone who has ever tried to build something and refused to wait.
           </p>
 
           <hr className="border-border my-10" />
 
           <div className="space-y-10 text-[20px] text-[#AAAAAA]" style={{ lineHeight: 1.9 }}>
             <p className="drop-cap">
-              There is a version of this story where I give up. Most founders who try to build technology in Africa without capital, without connections, and without an ecosystem built for them — they eventually do. I almost did. Several times.
+              There are many versions of this story. In some of them, I build quietly. In others, I build and fail, then build again. In all of them, one thing remains constant — I never stopped building. Because that is the reality for founders in Africa. We rarely start with capital. We rarely start with networks. We start with ideas, conviction, and the willingness to keep moving when the system was not designed for us.
             </p>
 
             <p>
-              I tried to build companies. I built technology I knew had value. I could see the market. But every time I reached for the resources I needed — capital, mentorship, infrastructure, legal structure, investor networks — I found a wall. Not always hostile. Often just... absent. Built for someone else's context, in someone else's city.
+              I have built companies. I have built technology I knew had real value. I could see the market clearly. I can still see it. But every time I reached for the next layer — capital, mentorship, legal infrastructure, investor networks — I encountered something consistent. Not rejection. Not hostility. Absence. A layer that simply was not there. Built for someone else's city, someone else's context.
             </p>
 
             {/* Pull quote */}
@@ -63,30 +63,30 @@ const Manifesto = () => {
               <span className="font-serif text-7xl text-primary/20 leading-none block -mb-6">"</span>
               <blockquote className="border-l-2 border-primary pl-6">
                 <p className="text-foreground text-xl italic leading-relaxed">
-                  The turning point was when I stopped blaming myself and started asking a different question: what if the problem isn't me? What if it's the missing layer?
+                  The problem was never a lack of talent or ambition. The problem was a missing layer — and I decided to build it.
                 </p>
               </blockquote>
             </div>
 
             <p>
-              The turning point was when I stopped blaming myself and started asking a different question: what if the problem isn't me? What if it's the missing layer? Every founder I spoke to in Nairobi, in Lagos, in Accra, in Johannesburg — same story. Different name, different idea, same structural absence.
+              When I spoke to other founders across Nairobi, Lagos, Accra, and Johannesburg, the pattern repeated. Different people. Different ideas. Same structural gap. That is when I stopped asking what was wrong with me, and started asking what was missing. The answer was clear: no one had built the infrastructure.
             </p>
 
             <p>
-              Mbote Foundation is the organization I needed. It has two arms that fund each other: a non-profit Foundation that runs community programs — builders, researchers, fellowships, hackathons — and a for-profit Ventures arm that invests in frontier technology companies and returns all profits to fund the mission. Commerce and impact are not in tension here. They are the same machine.
+              Mbote Foundation is that infrastructure. It has two parts designed to work together: a Foundation that backs builders, researchers, and early ideas — and Mbote Ventures, a for-profit investment arm that backs frontier technology companies and returns all profits into the mission. Commerce and impact are not in tension here. They are the same machine.
             </p>
 
             <p>
-              I do not have the capital to start this yet. I have the vision, the structure, and the conviction. I am putting this blueprint into the world publicly because the right people will find it. If you are a technical co-founder who has been looking for a long-term mission. If you are an investor who thinks in decades. If you are an engineer who wants their work to mean something beyond a product roadmap — this letter was written for you.
+              I am still building. CoinByte is one of the companies I am actively developing — and there will be more. Mbote Foundation is not a retreat from building; it is the system that should have existed when I started. I am building it now so the next generation of founders does not have to build alone.
             </p>
 
             <p>
-              Africa's moment is not coming. It is here. The question is only whether we build the infrastructure to catch it, or watch it happen without us. I have spent years watching. I am done watching.
+              I do not have all the resources yet. I have not officially launched, raised capital, or assembled the full team. What I have is a clear vision, a published blueprint, and the conviction to see it through. This letter is public because the right people will find it. If you are a builder, researcher, engineer, or investor who thinks in decades — this was written for you.
             </p>
           </div>
 
           <p className="font-display font-bold text-2xl text-primary mt-12">
-            If this letter found you — it was meant to.
+            Africa's moment is not coming. It is already here. The only question is whether we build the infrastructure to support it. I have decided to build it. If this letter found you — it was not by accident.
           </p>
 
           <div className="mt-10">
