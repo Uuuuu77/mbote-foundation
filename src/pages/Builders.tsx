@@ -5,7 +5,7 @@ import { Code2, FlaskConical, Lightbulb, GraduationCap, Cpu, Microscope, Rocket 
 
 /** Impact stats */
 const stats = [
-  { value: "100+", label: "Engineers in the network" },
+  { value: "10+", label: "Engineers in the network" },
   { value: "5", label: "Countries represented" },
   { value: "1", label: "Shared mission" },
 ];
