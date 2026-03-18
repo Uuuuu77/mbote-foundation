@@ -29,7 +29,7 @@ const founderTimeline = [
 
 const visionTimeline = [
   { year: "2025", title: "The Foundation", body: "We launch publicly and begin assembling the Builders community — our first engineers, scientists, and aligned investors.", badge: "NOW · SEEKING BUILDERS" },
-  { year: "2030", title: "The Labs", body: "Innovation labs operational in Nairobi, Lagos, Accra. First 20 companies in the Ventures portfolio. Research partnerships on three continents.", badge: null },
+  { year: "2030", title: "The Labs", body: "Innovation labs operational in Nairobi, Lagos, Accra, CapeTown, Kigali, Konza, Casablanca. First 20 companies in the Ventures portfolio. Research partnerships on three continents.", badge: null },
   { year: "2035", title: "The Platform", body: "Mbote Ventures is a recognized frontier technology investment platform. Portfolio companies in 20+ countries. Foundation programs reaching 1M+ beneficiaries.", badge: null },
   { year: "2040", title: "The Legacy", body: "Companies we've backed have shaped healthcare, energy, food, and connectivity for hundreds of millions. Africa is the defining innovation continent of the 21st century.", badge: null },
 ];
