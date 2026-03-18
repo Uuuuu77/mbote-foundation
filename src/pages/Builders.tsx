@@ -15,7 +15,7 @@ const programs = [
   {
     title: "Hackathons",
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=70&fit=crop",
-    desc: "Rapid-build events bringing talent together to solve defined problems in climate, health, and infrastructure. Open to engineers and designers worldwide. No experience minimum — only conviction required.",
+    desc: "Rapid-build events bringing talent together to solve defined problems in climate, health, AI, web3.0/blockchain/cryptos, agents, dev tools and infrastructure. Open to engineers and designers worldwide. No experience minimum — only conviction required.",
     details: ["48-72 hour intensive builds", "Real problems from real communities", "Prizes include Ventures pipeline access"],
   },
   {
